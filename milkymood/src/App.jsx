@@ -1,5 +1,6 @@
 import React from 'react';
 import { GlobalStyle } from './styles';
+import Header from "./components/Header"
 
 const App = () => {
   const message = (name) => {
@@ -9,8 +10,7 @@ const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
-      <h1>React course!</h1>
-      <h2>{message`Jorik`}</h2>
+      <Header />
     </div>
   );
 };
