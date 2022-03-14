@@ -1,18 +1,21 @@
 import React from 'react';
-import { GlobalStyle } from './styles';
+import { GlobalStyle, ImageContainer, Wrapper } from './styles';
 import Header from "./components/Header"
 import Footer from './components/Footer';
+import ImageBox from './components/ImageBox';
 
 
 const App = () => {
-  const message = (name) => {
-    return `${name} is enjoying React a lot!`;
-  };
-
   return (
     <div className="App">
       <GlobalStyle />
       <Header />
+      <Wrapper>
+        <ImageContainer>
+          <ImageBox />
+        </ImageContainer>
+
+      </Wrapper>
       <Footer />
     </div>
   );
