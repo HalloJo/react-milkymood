@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image } from './ImageBox.styles';
 
-const ImageBox = () => {
+const ImageBox = ({x, y}) => {
     return (
-        <Image />
+        <Image $initialX={x} $initialY={y} />
     )
 }
 
