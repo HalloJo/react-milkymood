@@ -42,7 +42,7 @@ const App = () => {
     <div className="App">
       <GlobalStyle />
       <Header />
-      <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} >
+      <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} $color={Math.round(240 - distance * 40)} >
         <ImageContainer $isTogether={distance < 0.001}>
           {matrix.map(([x,y], index) => (
             <ImageBox key={index} x={x} y={y} percent={distance} />

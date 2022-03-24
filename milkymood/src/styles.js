@@ -48,7 +48,11 @@ export const ImageContainer = styled.div.attrs(({ $isTogether }) => ({
   width: 400px;
 `;
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section.attrs(({ $color }) => ({
+  style: {
+    backgroundColor: `hsl(${$color}, 79%, 53%)`,
+  },
+}))`
   display: flex;
   justify-content: center;
   align-items: center;
