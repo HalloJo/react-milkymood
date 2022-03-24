@@ -1,21 +1,30 @@
 import styled, { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-    body {
-        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;600&display=swap');
-
-        font-family: 'Work Sans', sans-serif;
-        font-weight: 500;
-        color: white;
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        background: #123456;
+  @keyframes glow {
+    0% {
+      box-shadow: rgb(252, 210, 23) 0 0 0px;
     }
+    100% {
+      box-shadow: rgb(252, 210, 23) 0 10px 100px
+    }
+  }
+
+  body {
+      @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;600&display=swap');
+
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      color: white;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      background: #123456;
+  }
 `;
 
 export const Marginals = css`
@@ -27,7 +36,11 @@ export const Marginals = css`
   z-index: 1;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div.attrs(({ $isTogether }) => ({
+  style: {
+    animation: $isTogether ? "glow 3s infinite alternate" : "none",
+  },
+}))`
   display: flex;
   flex-wrap: wrap;
   position: relative;
