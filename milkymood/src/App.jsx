@@ -17,6 +17,8 @@ const matrix = [
 
 const App = () => {
   const [distance, setDistance] = useState(1)
+
+
   const easing = (num) => Math.pow(num, 3)
   const calculateDistance = ([x,y]) => {
     const center = [window.innerWidth / 2, window.innerHeight / 2]
@@ -36,16 +38,14 @@ const App = () => {
     calculateDistance([touches[0].clientX, touches[0].clientY])
   }
 
-  console.log(distance)
-
   return (
     <div className="App">
       <GlobalStyle />
       <Header />
       <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} >
-        <ImageContainer>
+        <ImageContainer $isTogether={distance < 0.001}>
           {matrix.map(([x,y], index) => (
-            <ImageBox key={index} x={x} y={y} />
+            <ImageBox key={index} x={x} y={y} percent={distance} />
           ))}
         </ImageContainer>
 
