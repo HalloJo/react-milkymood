@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Header from "./components/Header"
+import SignUpButton from './components/SignUpButton';
+import Modal from './components/Modal';
 import Footer from './components/Footer';
 import ImageBox from './components/ImageBox';
 import { GlobalStyle, ImageContainer, Wrapper } from './styles';
@@ -17,6 +19,7 @@ const matrix = [
 
 const App = () => {
   const [distance, setDistance] = useState(1)
+  const [showModal, setShowModal] = useState(false)
 
 
   const easing = (num) => Math.pow(num, 3)
@@ -38,12 +41,21 @@ const App = () => {
     calculateDistance([touches[0].clientX, touches[0].clientY])
   }
 
+  const toggleModal = () => {
+    setShowModal((showModal) => !showModal)
+    console.log("clicked!")
+  }
+
+
+
   return (
     <div className="App">
       <GlobalStyle />
+      {showModal && <Modal toggleModal={toggleModal}  />}
       <Header />
       <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} $color={Math.round(240 - distance * 40)} >
         <ImageContainer $isTogether={distance < 0.001}>
+          <SignUpButton toggleModal={toggleModal} />
           {matrix.map(([x,y], index) => (
             <ImageBox key={index} x={x} y={y} percent={distance} />
           ))}
