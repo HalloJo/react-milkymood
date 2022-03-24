@@ -43,18 +43,6 @@ export const AbsoluteCenter = css`
   transform: translate(-50%, -50%);
 `;
 
-export const ImageContainer = styled.div.attrs(({ $isTogether }) => ({
-  style: {
-    animation: $isTogether ? "glow 3s infinite alternate" : "none",
-  },
-}))`
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  height: 600px;
-  width: 400px;
-`;
-
 export const Wrapper = styled.section.attrs(({ $color }) => ({
   style: {
     backgroundColor: `hsl(${$color}, 79%, 53%)`,
@@ -65,4 +53,16 @@ export const Wrapper = styled.section.attrs(({ $color }) => ({
   align-items: center;
   height: 100vh;
   width: 100vw;
+`;
+
+export const ImageContainer = styled.div.attrs(({ $isTogether }) => ({
+  style: {
+    animation: $isTogether ? "glow 3s infinite alternate" : "none",
+  },
+}))`
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  height: 600px;
+  width: 400px;
 `;

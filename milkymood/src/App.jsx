@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Header from "./components/Header"
 import SignUpButton from './components/SignUpButton';
 import Modal from './components/Modal';
+import ModalInner from './components/ModalInner';
 import Footer from './components/Footer';
 import ImageBox from './components/ImageBox';
 import { GlobalStyle, ImageContainer, Wrapper } from './styles';
@@ -50,7 +51,9 @@ const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
-      {showModal && <Modal toggleModal={toggleModal}  />}
+      {showModal && <Modal toggleModal={toggleModal}>
+          <ModalInner />
+        </Modal>}
       <Header />
       <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} $color={Math.round(240 - distance * 40)} >
         <ImageContainer $isTogether={distance < 0.001}>
@@ -59,7 +62,6 @@ const App = () => {
             <ImageBox key={index} x={x} y={y} percent={distance} />
           ))}
         </ImageContainer>
-
       </Wrapper>
       <Footer />
     </div>
