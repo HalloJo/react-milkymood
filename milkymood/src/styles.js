@@ -36,6 +36,13 @@ export const Marginals = css`
   z-index: 1;
 `;
 
+export const AbsoluteCenter = css`
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+`;
+
 export const ImageContainer = styled.div.attrs(({ $isTogether }) => ({
   style: {
     animation: $isTogether ? "glow 3s infinite alternate" : "none",

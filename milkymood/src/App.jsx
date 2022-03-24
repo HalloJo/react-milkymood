@@ -43,7 +43,6 @@ const App = () => {
 
   const toggleModal = () => {
     setShowModal((showModal) => !showModal)
-    console.log("clicked!")
   }
 
 

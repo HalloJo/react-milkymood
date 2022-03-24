@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import { AbsoluteCenter } from "../../styles";
 
 export const Button = styled.button`
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+  ${AbsoluteCenter}
+
   border: 2px solid #fbfbfb;
   border-radius: 100%;
   color: #fbfbfb;
