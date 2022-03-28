@@ -5,6 +5,8 @@ export const ModalWrapper = styled.div`
   ${AbsoluteCenter}
 
   animation: glow 1s forwards;
+  display: flex;
+  justify-content: center;
   background: #fbfbfb;
   box-sizing: border-box;
   padding: 60px;

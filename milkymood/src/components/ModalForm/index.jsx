@@ -1,7 +1,9 @@
 import React from 'react';
 import * as Yup from 'yup'
-import {Formik, Form, Field } from 'formik'
+import {Formik, Form } from 'formik'
 import InputComponent from '../InputComponent';
+import { Submit } from './ModalForm.styles';
+
 
 const ModalForm = ({handleSuccess}) => {
 
@@ -22,7 +24,7 @@ const ModalForm = ({handleSuccess}) => {
                 <Form>
                     <InputComponent name="name" type="text" label="Name" autoComplete="off" />
                     <InputComponent name="email" type="email" label="Email" autoComplete="off" />
-                    <button type='submit'>Submit</button>
+                    <Submit type='submit'>Submit</Submit>
                 </Form>
             )}       
         </Formik>
